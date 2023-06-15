@@ -31,7 +31,7 @@ const connect = async () => {
         // const sql = 'SELECT * FROM students WHERE anyo_ingreso = 2023;'
 
         //Calcular el numero de profesores que hay por cada asignatura.
-        // const sql = 'SELECT COUNT(*) FROM subject_teacher GROUP BY subject_id;'
+        const sql = 'SELECT subject_id, COUNT(*) FROM subject_teacher GROUP BY subject_id;'
 
         //RETO 2
         //Obtén el id y la nota de los alumnos que tengan un id entre 1 y 20, o que tenga una nota
@@ -42,7 +42,7 @@ const connect = async () => {
         // const sql = 'SELECT AVG(mark) FROM marks WHERE date BETWEEN "2022-01-01" AND "2022-12-31" GROUP BY subject_id';
 
         //Obtén la media aritmética de las notas que se han dado en el último año por alumno.
-        const sql = 'SELECT AVG(mark) FROM marks WHERE date BETWEEN "2022-01-01" AND "2022-12-31" GROUP BY student_id';
+        // const sql = 'SELECT AVG(mark) FROM marks WHERE date BETWEEN "2022-01-01" AND "2022-12-31" GROUP BY student_id';
 
         const [result,data] = await connection.execute(sql);
         console.log(result); 
